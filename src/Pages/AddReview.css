@@ -1,0 +1,42 @@
+/* .add-review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .glass-form {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    color: white;
+  }
+  
+  .glass-form input,
+  .glass-form textarea,
+  .glass-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+  
+  .glass-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff8c00;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+   */

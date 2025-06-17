@@ -1,0 +1,52 @@
+/* Welcome Page Styles */
+.welcome{
+    font-family: Arial, sans-serif;
+}
+.welcome-container {
+    background: linear-gradient(135deg, #f4f6f8, #fefefe);
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* 3D Text Animation */
+  .welcome-title {
+    /* font-size: 2.5rem; */
+    font-weight: bold;
+    /* color: #62b2f0; */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    animation: textPop 1.2s ease-in-out;
+  }
+  
+  @keyframes textPop {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Welcome Message */
+  .welcome-text {
+    font-size: 1.3rem;
+    color: #1e1919;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
