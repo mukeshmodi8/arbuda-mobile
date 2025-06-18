@@ -4,8 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { useAuth } from './AuthProvider';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import AdBanner from '../components/AdBanner';
 // import AdBanner from "../Components/AdBanner"; // ✅ सही Import
-import AdBanner from "../Components/AdBanner";
+// import AdBanner from "../AdBanner";
 
 
 const auth = getAuth();
