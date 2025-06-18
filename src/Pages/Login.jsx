@@ -5,7 +5,8 @@ import Swal from 'sweetalert2';
 import { useAuth } from '../Pages/AuthProvider';
 import { signInWithPopup } from 'firebase/auth';
 import { GoogleAuthProvider } from 'firebase/auth/web-extension';
-import AdBanner from './components/AdBanner'; // AdBanner component import करो
+import AdBanner from '../components/AdBanner';
+// import AdBanner from './components/AdBanner';
 
 const Login = () => {
     const { register, handleSubmit, reset } = useForm();

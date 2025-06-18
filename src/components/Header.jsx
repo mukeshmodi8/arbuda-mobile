@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { useCart } from "../Pages/CartContext";
-import AdBanner from './components/AdBanner';
+// import AdBanner from "./AdBanner";  // ✅ सही import
+// import AdBanner from "./components/AdBanner";
+
 
 import {
   FaSearch,
@@ -16,6 +18,7 @@ import Swal from 'sweetalert2';
 import logo from "../Pages/image/logo.png";
 import "./Header.css";
 import { auth } from "../../Firebase";
+import AdBanner from "./AdBanner";
 
 const Header = () => {
   const { cart } = useCart();
@@ -26,14 +29,14 @@ const Header = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setCurrentUser({
-          name: user.displayName || "User", 
+          name: user.displayName || "User",
           email: user.email,
         });
       } else {
         setCurrentUser(null);
       }
     });
-  
+
     return () => unsubscribe();
   }, []);
 
@@ -89,7 +92,6 @@ const Header = () => {
         </div>
 
         <div className="user-actions d-flex gap-2">
-
           <NavLink to="/wishlist" className="btn btn-outline-primary d-flex align-items-center gap-2">
             <FaHeart /> <span>Wishlist</span>
           </NavLink>
@@ -103,29 +105,28 @@ const Header = () => {
 
           {currentUser ? (
             <div className="dropdown">
-  <button
-    className="btn btn-outline-dark dropdown-toggle"
-    type="button"
-    id="profileDropdown"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    <FaUser className="text-primary" /> Hello   {currentUser.name}
-  </button>
-  <ul className="dropdown-menu" aria-labelledby="profileDropdown">
-    <li>
-      <NavLink className="dropdown-item" to="/profile">
-        My Profile
-      </NavLink>
-    </li>
-    <li>
-      <button className="dropdown-item" onClick={logOut}>
-        Logout
-      </button>
-    </li>
-  </ul>
-</div>
-
+              <button
+                className="btn btn-outline-dark dropdown-toggle"
+                type="button"
+                id="profileDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <FaUser className="text-primary" /> Hello {currentUser.name}
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="profileDropdown">
+                <li>
+                  <NavLink className="dropdown-item" to="/profile">
+                    My Profile
+                  </NavLink>
+                </li>
+                <li>
+                  <button className="dropdown-item" onClick={logOut}>
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
           ) : (
             <NavLink to="/login" className="btn btn-outline-dark d-flex align-items-center gap-2">
               <FaUser /> <span>Sign In</span>
@@ -151,6 +152,11 @@ const Header = () => {
         <NavLink to="/tv" onClick={() => setDropdownOpen(false)}>T.V & Home Cinema</NavLink>
         <NavLink to="/wearable-tech" onClick={() => setDropdownOpen(false)}>Wearable Tech</NavLink>
         <NavLink to="/sale" className="sale" onClick={() => setDropdownOpen(false)}>Sale</NavLink>
+      </div>
+
+      {/* Example of where you might place AdBanner */}
+      <div className="ad-banner-container">
+        <AdBanner slot="1234567890" />
       </div>
     </nav>
   );
